@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consolado</title>
+    <style>
+        Body {
+
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(133, 228, 179);
+        }
+
+        div {
+            width: 400px;
+            margin-top: 5px;
+            background-color: white;
+        }
+
+        div p {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual país você Mora?</h1>
+    Nome do País?: <input type="text" name="mora" id="mora">
+    <input type="button" value="Verificar" onclick="verificacao()">
+    <div id="iverificado"> 
+
+    </div>
+    <script>
+
+        function verificacao() {
+
+
+            var pais = window.document.getElementById('mora')
+            var Verificado = window.document.querySelector('div#iverificado')
+            var meu = pais.value
+            
+            Verificado.innerHTML = `Vivendo no: <strong>${meu}</strong>`
+            if (meu.toLocaleUpperCase() !== 'BRASIL') {
+                Verificado.innerHTML +=  '<p>Você é <strong>Estrangeiro!</strong></p>'
+                } else {
+                    Verificado.innerHTML +=  '<p>Você é <strong style="color: green">Brasileiro!</strong></p>'
+                    }
+                              
+                }        
+    </script>
+
+
+
+</body>
+</html>
