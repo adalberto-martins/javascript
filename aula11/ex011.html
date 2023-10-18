@@ -14,7 +14,9 @@
         div {
             width: 400px;
             margin-top: 5px;
-            background-color: white;
+            padding-left: 10px;            
+            background-image: linear-gradient(to bottom,green, yellow);
+            border-radius: 5px;
         }
 
         div p {
@@ -38,7 +40,7 @@
             var Verificado = window.document.querySelector('div#iverificado')
             var meu = pais.value
             
-            Verificado.innerHTML = `Vivendo no: <strong>${meu}</strong>`
+            Verificado.innerHTML = `Vivendo no: <strong>${meu}</strong>!`
             if (meu.toLocaleUpperCase() !== 'BRASIL') {
                 Verificado.innerHTML +=  '<p>Você é <strong>Estrangeiro!</strong></p>'
                 } else {
