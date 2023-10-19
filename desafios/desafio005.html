@@ -59,7 +59,7 @@
             var mm = distancia * 1000
             
             var res = document.getElementById('res')
-            res.innerHTML = (`A distancia de ${distancia} metros, corresponde a...<br/><br/>${km} quilômetros (Km)<br/>${hm} hectômetros (Hm)<br/>${Dam} decâmetros (Dam)<br/>${dm} decimetro(dm)<br/>${cm} centímetros (cm)<br/>${mm} milímetros (mm)`)          
+            res.innerHTML = (`A distancia de ${distancia.toFixed(2).replace('.', ',')} metros, corresponde a...<br/><br/>${km.toFixed(3).replace('.', ',')} quilômetros (Km)<br/>${hm.toFixed(3).replace('.', ',')} hectômetros (Hm)<br/>${Dam.toFixed(3).replace('.', ',')} decâmetros (Dam)<br/>${dm.toFixed(1).replace('.',',')} decimetro(dm)<br/>${cm} centímetros (cm)<br/>${mm} milímetros (mm)`)          
 
         }
     </script>
