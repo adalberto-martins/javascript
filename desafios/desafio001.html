@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 001 JavaScript</title>
+    <style>
+        
+        body {
+            background-image: url(imagens/wallpaper001.jpg);
+
+        }
+
+        div.botao {
+            display: inline-block;
+            font-weight: bold;
+            border: 2px solid black;
+            background-color: lightgray;
+            width: 150px;
+            height: 50px;
+        }
+
+        div.botao:hover{
+            background-color: gray;
+            text-decoration: underline;
+        }
+
+        div#b1 {
+            text-align: center;
+            font-size: 26pt;            
+        }
+        div#b2 {
+            text-align: center;
+            font-size: 26pt;
+        }
+        div#b3 {
+            text-align: center;
+            font-size: 26pt;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Desafio das Mensagens</h1>
+    <div class="botao" id="b1" onclick="click1()">
+        botão 1
+
+    </div>
+    <div class="botao" id="b2" onclick="click2()">
+        botão 2
+
+    </div>
+    <div class="botao" id="b3" onclick="click3()">
+        botão 3 
+
+    </div>
+    <script>
+        function click1() {
+            window.alert('Você Clicou no 1º Botão')
+        }
+        function click2() {
+            window.alert('Você Clicou no 2º Botão')
+        }
+        function click3() {
+            window.alert('Você Clicou no 3º Botão')
+        }
+    </script>
+
+    
+    
+</body>
+</html>
