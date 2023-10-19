@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 003 JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aqua;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 32pt;
+        }
+
+        input {
+            width: 200px;
+            height: 60px;
+        }
+
+        input:hover {
+            text-decoration: underline;
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+    <input type="button" value="Antecessor e Sucessor" onclick="calcular()">
+
+    <script>
+        function calcular() {
+            var nun = window.prompt('Digite um numero inteiro qualquer')
+            var res = Number(nun)
+            var antes = res-1
+            var depois = res+1
+            window.alert(`Antes de ${res}, temos o número ${antes}.\nDepois de ${res}, temos o número ${depois}.`)           
+        } 
+    </script>
+</body>
+</html>

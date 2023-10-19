@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 004 JavaScript</title>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <input type="button" value="Comprar produto" onclick="calc()">
+
+    <script>
+        function calc() {
+            var produto = window.prompt('Que produto está comprando?')
+            var tpreço = window.prompt(`Quanto custa ${produto.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} que você está comprando?`)
+            var tdinheiro = window.prompt(`Qual o Valor que Você deu para pagar ${produto.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`)
+            var preço = Number(tpreço)
+            var dinheiro = Number(tdinheiro)
+            var troco = dinheiro - preço
+            var rtroco = Number(troco)
+            window.alert(`Você comprou ${produto.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} que custou ${preço.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}.\nDeu ${dinheiro.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} em dinheiro e vai receber ${rtroco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} de troco.\nVolte Sempre!`)
+        }
+    </script>
+    
+</body>
+</html>
