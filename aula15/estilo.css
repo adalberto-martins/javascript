@@ -22,6 +22,12 @@ section {
 
 }
 
+img#foto {
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
+
 Footer {
     color: white;
     text-align: center;
