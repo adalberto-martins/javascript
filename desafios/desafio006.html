@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 006 JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        section {
+            margin: auto;
+            padding: 5px;
+            border-radius: 4px;
+            background-color: rgb(238, 238, 247);
+            width: 600px;
+            height: 400px;
+        }
+
+        input {
+            margin-left: 270px;
+        }
+
+        div{
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Conversor de Temperaturas</h1>
+        <input type="button" value="Converter" onclick="converter()">
+        <div id="res">Clique no botão acima para iniciar.</div>
+    </section>
+    <script>
+        function converter() {
+            var txttemperatura = window.prompt('Por favor, Digite a Temperatura, em graus Celsius (ºc).')
+            var temperatura = Number(txttemperatura)
+            var fahrenheit = (temperatura * 9/5) + 32
+            var Kelvin = (temperatura + 273.15)  
+            var res = window.document.getElementById('res')
+
+            res.innerHTML = `<strong>A Temperatura de ${txttemperatura.replace('.', ',')}ºC, Corresponde a...</strong><br><br>
+            ${Kelvin.toFixed(2).replace('.', ',')}ºK (Kelvin)<br><br> ${fahrenheit.toFixed(2).replace('.', ',')}º(Fahrenheit)`       
+        }
+    </script>
+</body>
+</html>
