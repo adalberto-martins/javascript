@@ -7,7 +7,15 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: aqua;
+           
+        }
+
+        section {
+            margin: auto;
+            background-color: bisque;
+            width: 600px;
+            height: 400px;
+
         }
 
         h1 {
@@ -17,8 +25,9 @@
         }
 
         input {
-            width: 200px;
-            height: 60px;
+            display: block;
+            margin: auto;
+            padding: 10px;
         }
 
         input:hover {
@@ -29,8 +38,10 @@
     </style>
 </head>
 <body>
-    <h1>Antes e depois</h1>
-    <input type="button" value="Antecessor e Sucessor" onclick="calcular()">
+    <section>
+        <h1>Antes e depois</h1>
+        <input type="button" value="Antecessor e Sucessor" onclick="calcular()">
+    </section>
 
     <script>
         function calcular() {
