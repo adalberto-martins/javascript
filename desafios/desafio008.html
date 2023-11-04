@@ -14,7 +14,6 @@
             background-color: bisque;
             margin: auto;
         }
-
         h1 {
             text-align: center;
             margin-top: 10px;
@@ -27,11 +26,9 @@
             width: 180px;
             height: 40px;
         }
-
         div#res {
             text-align: center;
             padding: 20px;
-
         }
     </style>
 </head>
@@ -43,17 +40,21 @@
     </section>
     <script>
         function desconto() {
-        let produto = window.prompt('Qual é o produto que você está comprando?')
-        let preco = Number(window.prompt (`Qual é o preço do ${produto}?`))
-        let desconto = preco * 0.10
-        let valor = preco - desconto
+            let produto = window.prompt('Qual é o produto que você está comprando?');
+            let preco = parseFloat(window.prompt (`Qual é o preço do ${produto}?`));
+        
+            if (isNaN(preco)) {
+                window.alert("Valor inválido. Por favor, insira um número válido.");
+            } else {        
+                let desconto = preco * 0.10;
+                let valor = preco - desconto;       
 
-        let res = document.getElementById('res')
-        res.innerHTML = `<strong>Calculando desconto de 10% para ${produto}.<br><br></Strong>`
-        res.innerHTML += `O preço original era R$ ${preco.toFixed(2)}.<br>`
-        res.innerHTML += `Você acaba de ganhar R$ ${desconto.toFixed(2)} de desconto (10%).<br>`
-        res.innerHTML += `No fim, Você vai pagar R$ ${valor.toFixed(2)} no ${produto}.<br>`
-
+                let res = document.getElementById('res');
+                res.innerHTML = `<strong>Calculando desconto de 10% para ${produto}.<br><br></Strong>`;
+                res.innerHTML += `O preço original era R$ ${preco.toFixed(2)}.<br>`;
+                res.innerHTML += `Você acaba de ganhar R$ ${desconto.toFixed(2)} de desconto (10%).<br>`;
+                res.innerHTML += `No fim, Você vai pagar R$ ${valor.toFixed(2)} no ${produto}.<br>`;
+            }
         }
     </script>    
 </body>
