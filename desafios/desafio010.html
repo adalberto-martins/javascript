@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fórmula de Bhaskara</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        section {
+            width: 600px;
+            height: 300px;
+            margin: auto;
+            background-color: rgb(204, 251, 158);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <section>
         <h1>Resolvendo Bhaskara</h1>
-        <p><input type="button" value="Calcular" onclick="calcular()"></p>
-        <p id="res">Considerando uma equação no formato ax² + bx + c=0, aperte o botão acima para calcular o valor de Δ </p>
+        <p id="botao"><input type="button" value="Calcular" onclick="calcular()"></p>
+        <p id="res">Considerando uma equação no formato ax² + bx + c=0,<br> aperte o botão acima para calcular o valor de Δ </p>
     </section>
     <script>
         function calcular() {
@@ -27,7 +47,9 @@
             res.innerHTML = '<strong>Resolvendo Bhaskara</strong><br><br>'
             res.innerHTML += `A equação atual é ${a}X² + ${b}x + ${c} = 0<br>`;
             res.innerHTML += `O cálculo realizado será Δ = ${b}² -4.${a}.${c}<br>`
-            res.innerHTML += `O valor calculado foi Δ=${delta}<br>`;
+            res.innerHTML += `O valor calculado foi <mark>Δ=${delta}</mark><br>`;
+
+            /*
 
             if (delta > 0) {
             let x1 = (-b + Math.sqrt(delta)) / (2 * a);
@@ -39,6 +61,7 @@
         } else {
             res.innerHTML += '<br>Sem soluções reais (Δ < 0)';
         }
+        */
 
         }
     </script>    
