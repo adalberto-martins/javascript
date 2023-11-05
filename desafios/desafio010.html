@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+</head>
+<body>
+    <section>
+        <h1>Resolvendo Bhaskara</h1>
+        <p><input type="button" value="Calcular" onclick="calcular()"></p>
+        <p id="res">Considerando uma equação no formato ax² + bx + c=0, aperte o botão acima para calcular o valor de Δ </p>
+    </section>
+    <script>
+        function calcular() {
+            let a = Number(prompt('Qual é o valor de a?'));
+            let b = Number(prompt('Qual é o valor de b?'));
+            let c = Number(prompt('Qual é o valor de c?'));
+
+            let delta = b * b - 4 * a * c;
+            let x1, x2;
+
+
+
+            let res = document.getElementById('res');
+
+            res.innerHTML = '<strong>Resolvendo Bhaskara</strong><br><br>'
+            res.innerHTML += `A equação atual é ${a}X² + ${b}x + ${c} = 0<br>`;
+            res.innerHTML += `O cálculo realizado será Δ = ${b}² -4.${a}.${c}<br>`
+            res.innerHTML += `O valor calculado foi Δ=${delta}<br>`;
+
+            if (delta > 0) {
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            res.innerHTML += `<br>Soluções: x1 = ${x1}, x2 = ${x2}`;
+        } else if (delta === 0) {
+            let x1 = -b / (2 * a);
+            res.innerHTML += `<br>Solução única: x = ${x1}`;
+        } else {
+            res.innerHTML += '<br>Sem soluções reais (Δ < 0)';
+        }
+
+        }
+    </script>    
+</body>
+</html>
