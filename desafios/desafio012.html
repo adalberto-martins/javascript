@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+</head>
+<body>
+    <section>
+        <h1>Preço mudou</h1>
+        <input type="button" value="Verificar"onclick="verificar()">
+        <div id="res">Clique no botão acima para analisar a mudança de preço.</div>
+    </section>
+    <script>
+        function verificar() {
+            let produto = window.prompt('Qual o Nome do Produto?')
+            let precoant = Number(window.prompt('Qual era o preço anterior do produto?'))
+            let precoatu = Number(window.prompt('Qual é o preço atual do produto?'))
+             
+
+            if (precoatu > precoant) {
+                let dif = precoatu - precoant
+                let vari = (dif / precoant) *100
+                let res = document.getElementById('res')
+                res.innerHTML = '<strong>Analisando os Valores informados</strong><br><br>'
+                res.innerHTML += `O ${produto} custava R$ ${precoant.toFixed(2)} e Agora custa R$ ${precoatu.toFixed(2)}.<br>`
+                res.innerHTML += `Hoje o ${produto}, esta mais caro.<br>`
+                res.innerHTML += `O preço subiu ${dif.toFixed(2)} em relação ao preço anterior.<br>`
+                res.innerHTML += `Uma variação de ${vari.toFixed(1)}% pra cima.`
+            } else {
+                let dif = precoant - precoatu
+                let vari = (dif / precoatu) *100
+                let res = document.getElementById('res')
+                res.innerHTML = '<strong>Analisando os Valores informados</strong><br><br>'
+                res.innerHTML += `O ${produto} custava R$ ${precoant.toFixed(2)} e Agora custa R$ ${precoatu.toFixed(2)}.<br>`
+                res.innerHTML += `Hoje o ${produto}, esta mais barato.<br>`
+                res.innerHTML += `O preço caiu ${dif.toFixed(2)} em relação ao preço anterior.<br>`
+                res.innerHTML += `Uma variação de ${vari.toFixed(1)}% pra baixo.`
+            }
+            
+
+        }
+    </script>
+</body>
+</html>
