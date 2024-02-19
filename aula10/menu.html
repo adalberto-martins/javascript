@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ 
+
+let numero = new Array(5);
+let NOME = new Array(5);
+let IDADE = new Array(5);
+let indice;
+let L;, XL;
+let OPCAO;
+
+function PESQUISA(XV) {
+    let II;
+    let A = false;
+
+    for (II = 0; II < 5; II++) {
+        if (numero[II] === XV) {
+            A = true;
+            break;
+        }
+    }
+
+    return A;
+}
+
+function INCLUIR() {
+    let II;
+    let L;
+    let xnum;
+    let xnom;
+    let xidd;
+
+    console.clear();
+    console.log(" INCLUIR ");
+
+    if (indice <= 5) {
+        xnum = 0;
+        xnom = "";
+        xidd = "";
+        L = true;
+
+        while (L) {
+            xnum = parseInt(prompt("Digite o Número " + indice + ": "));
+            L = PESQUISA(xnum);
+        }
+
+        xnom = prompt("Digite o Nome: ");
+        xidd = prompt("Digite a Idade: ");
+
+        numero[indice] = xnum;
+        NOME[indice] = xnom;
+        IDADE[indice] = xidd;
+        indice++;
+    }
+
+    console.log("\nTecle <Enter>");
+    XL = prompt();
+}
+
+function CONSULTAR() {
+    console.clear();
+    console.log(" CONSULTA ");
+
+    for (let II = 0; II < 5; II++) {
+        console.log("[" + II + "] -> " + numero[II] + " " + NOME[II] + " " + IDADE[II]);
+    }
+
+    console.log("\nTecle <Enter>");
+    XL = prompt();
+}
+
+function EXCLUIR() {
+    let II;
+    let L;
+    let xnum;
+
+    console.clear();
+    console.log(" EXCLUIR ");
+    xnum = 0;
+    L = false;
+
+    while (!L) {
+        xnum = parseInt(prompt("Digite o Número " + II + ": "));
+        L = PESQUISA(xnum);
+    }
+
+    console.log("Digite o Nome: " + NOME[II]);
+    console.log("Digite a Idade: " + IDADE[II]);
+
+    NOME[II] = "";
+    IDADE[II] = "";
+
+    console.log("\nTecle <Enter>");
+    XL = prompt();
+}
+
+function ALTERAR() {
+    let II;
+    let L;
+    let xnum;
+    let xnom;
+    let xidd;
+
+    console.clear();
+    console.log(" ALTERAÇÃO ");
+    xnum = 0;
+    xnom = "";
+    xidd = "";
+    L = false;
+
+    while (!L) {
+        xnum = parseInt(prompt("Digite o Número: "));
+        L = PESQUISA(xnum);
+    }
+
+    console.log("Digite o Nome: " + NOME[II]);
+    console.log("Digite a Idade: " + IDADE[II]);
+
+    xnom = prompt("Digite o Nome: ");
+    xidd = prompt("Digite a Idade: ");
+
+    numero[II] = xnum;
+    NOME[II] = xnom;
+    IDADE[II] = xidd;
+
+    console.log("\nTecle <Enter>");
+    XL = prompt();
+}
+
+let indice = 1;
+let L = true;
+let OPCAO = "";
+
+while (L) {
+    console.clear();
+    console.log("   MENU   ");
+    console.log("1-INCLUSÃO");
+    console.log("2-CONSULTA");
+    console.log("3-EXCLUSÃO");
+    console.log("4-ALTERAÇÃO");
+    console.log("5-FINALIZAR");
+    console.log(" ");
+    OPCAO = prompt("Digite a opção: ");
+
+    switch (OPCAO) {
+        case "1":
+            INCLUIR();
+            break;
+        case "2":
+            CONSULTAR();
+            break;
+        case "3":
+            EXCLUIR();
+            break;
+        case "4":
+            ALTERAR();
+            break;
+        case "5":
+            L = false;
+            break;
+        default:
+            console.log("OPÇÃO INVÁLIDA !!!");
+            console.log(" ");
+            console.log("Tecle <Enter>");
+            XL = prompt();
+            break;
+    }
+}
+
+</script>
+</html>
