@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preço mudou</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Preço Mudou</title>
 </head>
 <body>
     <section>
-        <h1>Preço mudou</h1>
+        <h1>O Preço Mudou?</h1>
         <input type="button" value="Verificar"onclick="verificar()">
-        <div id="res">Clique no botão acima para analisar a mudança de preço.</div>
+        <div id="res">Clique no Botão Acima para Analisar a Mudança de Preço.</div>
     </section>
     <script>
         function verificar() {
@@ -22,20 +23,30 @@
                 let dif = precoatu - precoant
                 let vari = (dif / precoant) *100
                 let res = document.getElementById('res')
-                res.innerHTML = '<strong>Analisando os Valores informados</strong><br><br>'
-                res.innerHTML += `O ${produto} custava R$ ${precoant.toFixed(2)} e Agora custa R$ ${precoatu.toFixed(2)}.<br>`
-                res.innerHTML += `Hoje o ${produto}, esta mais caro.<br>`
-                res.innerHTML += `O preço subiu ${dif.toFixed(2)} em relação ao preço anterior.<br>`
-                res.innerHTML += `Uma variação de ${vari.toFixed(1)}% pra cima.`
-            } else {
+                res.innerHTML = `<strong>Analisando os Valores informados de: ${produto}. </strong><br><br>`
+                res.innerHTML += `O ${produto} Custava R$ ${precoant.toFixed(2)} e Agora Custa R$ ${precoatu.toFixed(2)}.<br>`
+                res.innerHTML += `Hoje o ${produto}, esta mais Caro.<br>`
+                res.innerHTML += `O preço Subiu ${dif.toFixed(2)} em relação ao preço Anterior.<br>`
+                res.innerHTML += `Uma Variação de ${vari.toFixed(1)}% &#11014;`
+            } else if ( precoatu < precoant) {
                 let dif = precoant - precoatu
                 let vari = (dif / precoatu) *100
                 let res = document.getElementById('res')
-                res.innerHTML = '<strong>Analisando os Valores informados</strong><br><br>'
+                res.innerHTML = `<strong>Analisando os Valores Informados de: ${produto}. </strong><br><br>`
                 res.innerHTML += `O ${produto} custava R$ ${precoant.toFixed(2)} e Agora custa R$ ${precoatu.toFixed(2)}.<br>`
                 res.innerHTML += `Hoje o ${produto}, esta mais barato.<br>`
                 res.innerHTML += `O preço caiu ${dif.toFixed(2)} em relação ao preço anterior.<br>`
-                res.innerHTML += `Uma variação de ${vari.toFixed(1)}% pra baixo.`
+                res.innerHTML += `Uma Variação de ${vari.toFixed(1)}% &#11015;`
+            }
+
+            else {
+                let dif = precoatu - precoant
+                let vari = (dif / precoatu) *100
+                let res = document.getElementById('res')
+                res.innerHTML = `<strong>Analisando os Valores informados de: ${produto}. </strong><br><br>`
+                res.innerHTML += `O ${produto}, Custava R$ ${precoant.toFixed(2)} e Agora Custa R$ ${precoatu.toFixed(2)}.<br>`
+                res.innerHTML += `Hoje o ${produto}, Não Teve Alteração de Valor.<br><br>`
+                res.innerHTML += `Uma Variação de ${vari.toFixed(1)}%.`
             }
             
 
