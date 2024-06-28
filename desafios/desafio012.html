@@ -37,9 +37,7 @@
                 res.innerHTML += `Hoje o ${produto}, esta mais barato.<br>`
                 res.innerHTML += `O preço caiu ${dif.toFixed(2)} em relação ao preço anterior.<br>`
                 res.innerHTML += `Uma Variação de ${vari.toFixed(1)}% &#11015;`
-            }
-
-            else {
+            }else {
                 let dif = precoatu - precoant
                 let vari = (dif / precoatu) *100
                 let res = document.getElementById('res')
@@ -47,8 +45,7 @@
                 res.innerHTML += `O ${produto}, Custava R$ ${precoant.toFixed(2)} e Agora Custa R$ ${precoatu.toFixed(2)}.<br>`
                 res.innerHTML += `Hoje o ${produto}, Não Teve Alteração de Valor.<br><br>`
                 res.innerHTML += `Uma Variação de ${vari.toFixed(1)}%.`
-            }
-            
+            }           
 
         }
     </script>
