@@ -12,7 +12,7 @@ function carregar() {
         saudacao.innerHTML = 'BOM DIA!'
         img.src = 'fotomanha.png'
         document.body.style.background = '#ffdfb2'
-    }else if (hora >= 12 && hora <= 18) {
+    }else if (hora >= 12 && hora <= 17) {
         // BOA TARDE!
         saudacao.innerHTML = 'BOA TARDE!'
         img.src = 'fototarde.png'
